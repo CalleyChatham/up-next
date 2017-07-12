@@ -7,18 +7,14 @@ var PORT = 5000;
 var app = express();
 
 // HANDLE THE "/" ROUTE BEING REQUESTED BY THE USER
-var customerRoute =  require('./server/routes/customer')(app);
-customerRoute(app)
+app.get("/", function(req, res) {
+	res.send("Welcome to upNext");
+});
 
-var menusRoute =  require('./server/routes/menus')(app);
-menusRoute(app)
-
-var ordersRoute =  require('./server/routes/orders')(app);
-ordersRoute(app)
-
-var trucksRoute =  require('./server/routes/trucks')(app);
-trucksRoute(app)
-//require('./server/routes/order.js');
+require('./server/routes/customer')(app);
+require('./server/routes/menus')(app);
+require('./server/routes/orders')(app);
+require('./server/routes/trucks')(app);
 
 // THE HOUSE ADDRESS OF WHERE THE SERVER IS LOCATED WHEN INITIATED
 app.listen(PORT, function () {
