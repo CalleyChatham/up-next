@@ -1,7 +1,12 @@
 // REQUIRING PACKAGES
 const express = require("express");
 const bodyParser = require("body-parser");
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
+
+var Customers = require("./models/customers.js");
+var Menus = require("./models/menus.js");
+var Orders = require("./models/orders.js");
+var Trucks = require("./models/trucks.js");
 
 var PORT = 5000;
 var app = express();
