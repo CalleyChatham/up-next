@@ -1,8 +1,14 @@
 module.exports = function (app) {
 app.get("/trucks", function(req, res, next) {
-	res.send(200, [{
-		name: 'upNext get'
-	}]);
+	Trucks.find({})
+		.exec(function(err, doc){
+			if(err){
+        		console.log(err);
+      		}
+      		else {
+        		res.send(doc);
+      		}
+		});
 });
 
 app.get("/trucks/:id", function(req, res, next) {
@@ -12,9 +18,21 @@ app.get("/trucks/:id", function(req, res, next) {
 });
 
 app.post("/trucks", function(req, res, next) {
-	res.send(200, [{
-		name: 'upNext post'
-	}]);
+	var newTruck = Trucks({
+		name: req.body.name,
+		description: req.body.description,
+		location: req.body.location,
+		menu: req.body.menu
+	});
+
+	newTruck.save(function(err, doc){
+    if(err){
+      console.log(err);
+      res.send(err);
+    } else {
+      res.json(doc);
+    }
+  });
 });
 
 app.put("/trucks/:id", function(req, res, next) {
@@ -24,8 +42,10 @@ app.put("/trucks/:id", function(req, res, next) {
 });
 
 app.delete("/trucks/:id", function(req, res, next) {
-		res.send(200, [{
-		name: 'upNext delete'
-	}]);
+		Trucks.find({'_id': req.params.id}).remove()
+		  .exec(function(err, doc){
+		  	res.send(doc);
+		  });
 });
+
 }

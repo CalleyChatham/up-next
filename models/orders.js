@@ -4,7 +4,8 @@ var Schema = mongoose.Schema;
 var OrderSchema = new Schema({
 	status: {
 		type: String,
-		required: true
+		required: true,
+		default: 'in progress'
 	},
 	items: [{
 		type: Schema.Types.ObjectId,

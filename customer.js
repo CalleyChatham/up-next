@@ -1,8 +1,14 @@
 module.exports = function (app) {
 app.get("/customer", function(req, res, next) {
-	res.send(200, [{
-		name: 'upNext get'
-	}]);
+	Customers.find({})
+		.exec(function(err, doc){
+			if(err){
+        		console.log(err);
+      		}
+      		else {
+        		res.send(doc);
+      		}
+		});
 });
 
 app.get("/customer/:id", function(req, res, next) {
@@ -13,9 +19,18 @@ app.get("/customer/:id", function(req, res, next) {
 
 // Review classes around at week 13
 app.post("/customer", function(req, res, next) {
-	res.send(200, [{
-		name: 'upNext post'
-	}]);
+	var newCustomer = Customers({
+		name: req.body.name,
+	});
+
+	newCustomer.save(function(err, doc){
+    if(err){
+      console.log(err);
+      res.send(err);
+    } else {
+      res.json(doc);
+    }
+  });
 });
 
 app.put("/customer/:id", function(req, res, next) {
@@ -25,8 +40,9 @@ app.put("/customer/:id", function(req, res, next) {
 });
 
 app.delete("/customer/:id", function(req, res, next) {
-		res.send(200, [{
-		name: 'upNext delete'
-	}]);
+		Customers.find({'_id': req.params.id}).remove()
+		  .exec(function(err, doc){
+		  	res.send(doc);
+		  });
 });
 }
