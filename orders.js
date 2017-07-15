@@ -40,7 +40,19 @@ app.post("/orders", function(req, res, next) {
 });
 
 app.put("/orders/:id", function(req, res, next) {
-	Orders.update({"_id": req.params.id}, {$set: {'items': req.body.items, 'total': req.body.total}})
+	Orders.update({"_id": req.params.id}, {$set: {'time_ready': req.params.time_ready}})
+	  .exec(function(err, doc){
+	  	if(err){
+	  		console.log(err);
+	  	}
+	  	else{
+	  		res.send(doc);
+	  	}
+	  });
+});
+
+app.put("/orders/:id", function(req, res, next) {
+	Orders.update({"_id": req.params.id}, {$set: {'time_pickedup': req.params.time_pickedup}})
 	  .exec(function(err, doc){
 	  	if(err){
 	  		console.log(err);
