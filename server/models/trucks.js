@@ -26,7 +26,7 @@ var TruckSchema = new Schema({
 	location:{
 		type: String,
 		required: true
-	},
+	}
 	menu: [{
 		type: Schema.Types.ObjectId,
 		ref: 'Menu'
