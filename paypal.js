@@ -9,6 +9,7 @@
 const customertotal = this.state.total;
 
 let PayPalButton = paypal.Button.driver('react', { React, ReactDOM });
+
 class Main extends React.Component {
     constructor() {
         super();
@@ -54,4 +55,4 @@ class Main extends React.Component {
     }
 }
 ReactDOM.render(<Main />, document.querySelector('#page'));
-
+export default scriptLoader('https://www.paypalobjects.com/api/checkout.js')(PayPalButton)
