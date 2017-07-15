@@ -12,9 +12,15 @@ app.get("/orders", function(req, res, next) {
 });
 
 app.get("/orders/:id", function(req, res, next) {
-	res.send(200, [{
-		name: 'upNext get'
-	}]);
+	Orders.find({"_id:": req.params.id})
+		.exec(function(err, doc){
+			if(err){
+        		console.log(err);
+      		}
+      		else {
+        		res.send(doc);
+      		}
+      	});
 });
 
 app.post("/orders", function(req, res, next) {

@@ -12,9 +12,15 @@ app.get("/customer", function(req, res, next) {
 });
 
 app.get("/customer/:id", function(req, res, next) {
-	res.send(200, [{
-		name: 'upNext get'
-	}]);
+	Customers.find({"_id:": req.params.id})
+		.exec(function(err, doc){
+			if(err){
+        		console.log(err);
+      		}
+      		else {
+        		res.send(doc);
+      		}
+      	});
 });
 
 // Review classes around at week 13

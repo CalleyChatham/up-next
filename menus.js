@@ -12,9 +12,15 @@ app.get("/menus", function(req, res, next) {
 });
 
 app.get("/menus/:id", function(req, res, next) {
-	res.send(200, [{
-		name: 'upNext get'
-	}]);
+	Menus.find({"_id:": req.params.id})
+		.exec(function(err, doc){
+			if(err){
+        		console.log(err);
+      		}
+      		else {
+        		res.send(doc);
+      		}
+      	});
 });
 
 app.post("/menus", function(req, res, next) {
@@ -34,9 +40,15 @@ app.post("/menus", function(req, res, next) {
 });
 
 app.put("/menus/:id", function(req, res, next) {
-	res.send(200, [{
-		name: 'upNext put'
-	}]);
+	Menus.update({"_id": req.params.id}, {$set: {"price": req.params.price}})
+	  .exec(function(err, doc){
+	  	if(err){
+	  		console.log(err);
+	  	}
+	  	else{
+	  		res.send(doc);
+	  	}
+	  });
 });
 
 app.delete("/menus/:id", function(req, res, next) {
