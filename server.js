@@ -11,6 +11,17 @@ var Trucks = require("./models/trucks.js");
 var PORT = 5000;
 var app = express();
 
+mongoose.connect("mongodb://localhost/upnext");
+var db = mongoose.connection;
+
+db.on("error", function(err) {
+  console.log("Mongoose Error: ", err);
+});
+
+db.once("open", function() {
+  console.log("Mongoose connection successful.");
+});
+
 // HANDLE THE "/" ROUTE BEING REQUESTED BY THE USER
 app.get("/", function(req, res) {
 	res.send("Welcome to upNext");
