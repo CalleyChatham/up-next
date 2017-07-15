@@ -42,9 +42,15 @@ app.post("/trucks", function(req, res, next) {
 });
 
 app.put("/trucks/:id", function(req, res, next) {
-	res.send(200, [{
-		name: 'upNext put'
-	}]);
+	Trucks.update({"_id": req.params.id}, {$set: {"location": req.body.location}})
+	  .exec(function(err, doc){
+	  	if(err){
+	  		console.log(err);
+	  	}
+	  	else{
+	  		res.send(doc);
+	  	}
+	  });
 });
 
 app.delete("/trucks/:id", function(req, res, next) {

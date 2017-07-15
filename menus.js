@@ -40,7 +40,7 @@ app.post("/menus", function(req, res, next) {
 });
 
 app.put("/menus/:id", function(req, res, next) {
-	Menus.update({"_id": req.params.id}, {$set: {"price": req.params.price}})
+	Menus.update({"_id": req.params.id}, {$set: {"price": req.body.price}})
 	  .exec(function(err, doc){
 	  	if(err){
 	  		console.log(err);

@@ -40,9 +40,15 @@ app.post("/orders", function(req, res, next) {
 });
 
 app.put("/orders/:id", function(req, res, next) {
-	res.send(200, [{
-		name: 'upNext put'
-	}]);
+	Orders.update({"_id": req.params.id}, {$set: {'items': req.body.items, 'total': req.body.total}})
+	  .exec(function(err, doc){
+	  	if(err){
+	  		console.log(err);
+	  	}
+	  	else{
+	  		res.send(doc);
+	  	}
+	  });
 });
 
 app.delete("/orders/:id", function(req, res, next) {
