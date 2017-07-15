@@ -4,8 +4,7 @@ var Schema = mongoose.Schema;
 var OrderSchema = new Schema({
 	status: {
 		type: String,
-		required: true,
-		default: 'in progress'
+		required: true
 	},
 	items: [{
 		type: Schema.Types.ObjectId,
@@ -15,14 +14,14 @@ var OrderSchema = new Schema({
 		type: Number
 	},
 	time_placed:{
-		type: Date,
+		type: Timestamp,
 	},
 	time_ready:{
-		type: Date,
+		type: Timestamp,
 		default: null
 	},
 	time_pickedup:{
-		type: Date,
+		type: Timestamp,
 		default: null
 	}
 });
