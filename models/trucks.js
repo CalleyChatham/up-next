@@ -23,6 +23,9 @@ var TruckSchema = new Schema({
 	description:{
 		type: String
 	},
+	image:{
+		type: String
+	},
 	location:{
 		type: String,
 		required: true
