@@ -9,7 +9,7 @@ var TruckSchema = new Schema({
 	fb_id: {
 		type: String,
 		required: true,
-		unique: true
+		unique: true,
 		validate: {
             validator: function (idOfTruck, cb) {
                 Truck.find({
