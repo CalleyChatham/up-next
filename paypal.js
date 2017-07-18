@@ -5,26 +5,20 @@
 
 //<div id="page"></div>
 //Above is for using straight html
-
+import React from 'react';
 
 const customertotal = this.state.total;
 
 let PayPalButton = paypal.Button.driver('react', { React, ReactDOM });
 
-class Main extends React.Component {
+class CheckoutButton extends React.Component {
     constructor() {
         super();
         this.state = {
             env: 'sandbox',
             client: {
                 sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
-                production: ''
-            },
-            style:  {
-                label: 'checkout', // checkout | credit | pay
-                size:  'small',    // small | medium | responsive
-                shape: 'rect',     // pill | rect
-                color: 'silver'      // gold | blue | silver
+                production: 'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R'
             },
             commit: true
         };
@@ -55,4 +49,4 @@ class Main extends React.Component {
         );
     }
 }
-ReactDOM.render(<Main />, document.querySelector('#page'));
+module.exports = CheckoutButton;
