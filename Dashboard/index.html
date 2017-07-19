@@ -38,7 +38,6 @@
 
       var RevenuePerYear = {
         "chart": {
-          // caption options
           "caption": "Revenue per Year",
           "xAxisName": "year",
           "yAxisName": "Revenue (In USD)",
@@ -66,9 +65,9 @@
         }]
       };
 
-      var countryChartConfigs = {
+      var yearChartConfigs = {
         type: "column2d",
-        renderAt: "country-revenue",
+        renderAt: "year-revenue",
         width: '100%',
         height: 400,
         dataFormat: "json",
@@ -77,7 +76,6 @@
 
       var monthlyDataSource = {
         chart: {
-          // caption options
           "caption": "Monthly Revenue Trend",
           "xAxisName": "Month",
           "yAxisName": "Revenue (In USD)",
@@ -133,7 +131,6 @@
 
       var productDataSource = {
         chart: {
-          // caption options
           "caption": "Split of Revnue by Products",
           "theme": "carbon"
         },
@@ -169,8 +166,8 @@
           <h1 className="main-title">Up Next ...Food Truck Name... Revenue Analysis</h1>
           <div id="interactive-dashbaord"></div>
           <div className="chart-row">
-            <div id="country-revenue">
-              <react_fc.FusionCharts {...countryChartConfigs} />
+            <div id="year-revenue">
+              <react_fc.FusionCharts {...yearChartConfigs} />
             </div>
           </div>
           <div className="chart-row">
