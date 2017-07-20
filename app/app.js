@@ -1,7 +1,7 @@
 // Declare React Dependencies
-var React = require("react");
-
-var ReactDOM = require("react-dom");
+import React = require("react");
+import ReactDOM = require("react-dom");
+import FacebookLogin from '../src/facebook';
 
 // Grabs the Routes
 var routes = require("./config/routes");
