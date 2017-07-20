@@ -35,7 +35,6 @@
     render: function() {
       var that = this,
         rows = [];
-
       var RevenuePerYear = {
         "chart": {
           "caption": "Revenue per Year",
@@ -43,7 +42,6 @@
           "yAxisName": "Revenue (In USD)",
           "theme": "carbon"
         },
-
         "data": [{
           "label": "2017",
           "value": "920000"
@@ -64,7 +62,6 @@
           "value": "590000"
         }]
       };
-
       var yearChartConfigs = {
         type: "column2d",
         renderAt: "year-revenue",
@@ -73,7 +70,6 @@
         dataFormat: "json",
         dataSource: RevenuePerYear
       };
-
       var monthlyDataSource = {
         chart: {
           "caption": "Monthly Revenue Trend",
@@ -83,28 +79,28 @@
         },
         data: [{
           "label": "Jan",
-          "value": "6570"
+          "value": "657000"
         }, {
           "label": "Feb",
-          "value": "1380"
+          "value": "138000"
         }, {
           "label": "Mar",
-          "value": "1920"
+          "value": "192000"
         }, {
           "label": "Apr",
-          "value": "1110"
+          "value": "111000"
         }, {
           "label": "May",
-          "value": "4380"
+          "value": "438000"
         }, {
           "label": "Jun",
-          "value": "2920"
+          "value": "292000"
         }, {
           "label": "Jul",
-          "value": "3650"
+          "value": "365000"
         }, {
           "label": "Aug",
-          "value": "6490"
+          "value": "649000"
         }, {
           "label": "Sep",
           "value": "746000"
@@ -119,7 +115,6 @@
           "value": "730000"
         }]
       };
-
       var monthlyChartConfigs = {
         type: "spline",
         renderAt: "monthly-revenue",
@@ -128,7 +123,6 @@
         dataFormat: "json",
         dataSource: monthlyDataSource
       };
-
       var productDataSource = {
         chart: {
           "caption": "Split of Revnue by Products",
@@ -151,7 +145,6 @@
           "value": "1460000"
         }]
       };
-
       var productChartConfigs = {
         type: "doughnut2d",
         renderAt: "product-revenue",
@@ -160,10 +153,9 @@
         dataFormat: "json",
         dataSource: productDataSource
       };
-
       return (
         <div>
-          <h1 className="main-title">Up Next ...Food Truck Name... Revenue Analysis</h1>
+          <h1 className="main-title">Your Food Truck Revenue Analysis</h1>
           <div id="interactive-dashbaord"></div>
           <div className="chart-row">
             <div id="year-revenue">
@@ -182,7 +174,6 @@
       );
     }
   });
-
   React.render(
     <MyApp />,
     document.getElementById("dashboard")

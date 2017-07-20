@@ -3,7 +3,7 @@ FusionCharts.register("theme", {
   theme: {
     base: {
       chart: {
-        paletteColors: "#444444,#666666,#888888,#aaaaaa,#cccccc,#555555,#777777,#999999,#bbbbbb,#dddddd",
+        paletteColors: "#e45800,#00a8e3,#00a8e10,#f2cd03,#cccccc,#555555,#777777,#999999,#bbbbbb,#dddddd",
         labelDisplay: "auto",
         baseFontColor: "#333333",
         baseFont: "Helvetica Neue,Arial",
@@ -54,7 +54,7 @@ FusionCharts.register("theme", {
     geo: {
       chart: {
         showLabels: "0",
-        fillColor: "#444444",
+        fillColor: "#00a8e3",
         showBorder: "1",
         borderColor: "#eeeeee",
         borderThickness: "1",
@@ -165,7 +165,7 @@ FusionCharts.register("theme", {
     },
     column2d: {
       chart: {
-        paletteColors: "#444444",
+        paletteColors: "#00a8e3",
         valueFontColor: "#ffffff",
         placeValuesInside: "1",
         rotateValues: "1",
