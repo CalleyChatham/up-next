@@ -1,19 +1,13 @@
-// Include React
-var React = require("react");
-// Including the Link component from React Router to navigate within our application without full page reloads
-var Link = require("react-router").Link;
+import React, { PropTypes, Component } from 'react';
+var {FBLogin, FBLoginManager} = require('react-native-facebook-login');
 
-var Login = React.createClass({
-    render: function() {
+class Login extends Component {
+    render() {
         return (
-            <div className="container">
-
-                <p>Facebook Login</p>
-
-
-            </div>
+            <FBLogin />
         );
     }
-});
+};
+
 
 module.exports = Login;
