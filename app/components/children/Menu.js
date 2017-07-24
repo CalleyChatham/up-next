@@ -3,8 +3,7 @@ var React = require("react");
 // Including the Link component from React Router to navigate within our application without full page reloads
 var Link = require("react-router").Link;
 
-
-var Orders = React.createClass({
+var Menu = React.createClass({
     render: function() {
         return (
             <div className="container">
@@ -12,7 +11,7 @@ var Orders = React.createClass({
 
 
 
-            </div>
+        </div>
     );
     }
 });
@@ -21,4 +20,4 @@ var Orders = React.createClass({
 
 
 
-module.exports = Orders;
+module.exports = Menu;
