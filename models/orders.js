@@ -14,14 +14,14 @@ var OrderSchema = new Schema({
 		type: Number
 	},
 	time_placed:{
-		type: Timestamp,
+		type: Date,
 	},
 	time_ready:{
-		type: Timestamp,
+		type: Date,
 		default: null
 	},
 	time_pickedup:{
-		type: Timestamp,
+		type: Date,
 		default: null
 	}
 });
