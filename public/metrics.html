@@ -4,7 +4,7 @@
 	<title>
 		SAMPLE SCREEN
 	</title>
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -46,11 +46,12 @@
 
 
 	<!-- CONTENT SECTION -->
-	<section class="container" id="qr-reader">
+	<section class="container" id="truck-info">
 		<div class="row">
-			<div class="col-md-12">
-				<button class="btn btn-primary">CLICK HERE</button>
-				<button class="btn btn-secondary">CLICK HERE</button>
+			<div class="col-md-12 text-center">
+				<img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Solid_gray.png" class="img-circle text-center" width="100px" height="100px">
+				<h1>Food Truck Name</h1>
+				<div><em>Current Location</em></div>
 			</div>
 		</div>
 	</section>
@@ -58,30 +59,42 @@
 
 	<!-- ORDER WINDOW -->
 	<section class="container" id="qr-reader">
-		<div class="row">
+		<div class="row order-item">
 			<div class="col-xs-6">
-				ORDER NUMBER
+				<strong>ORDER #935</strong>
+				<div>Kimchi French Fries</div>
 			</div>
+			<div class="col-xs-6 text-right">
+				<span class="status in-progress">In Progress</span>
+				<!-- <span class="status waiting">Ready</span>
+				<span class="status confirm">Picked Up</span> -->
+			</div>
+		</div>
+		<div class="row order-item">
 			<div class="col-xs-6">
-				ACTIONS
+				<strong>ORDER #936</strong>
+				<div>Pork Belly Bao</div>
+			</div>
+			<div class="col-xs-6 text-right">
+				<!-- <span class="status in-progress">In Progress</span> -->
+				<span class="status waiting">Ready</span>
+				<!-- <span class="status confirm">Picked Up</span> -->
+			</div>
+		</div>
+
+		<div class="row order-item">
+			<div class="col-xs-6">
+				<strong>ORDER #937</strong>
+				<div>Kimchy fried rice</div>
+			</div>
+			<div class="col-xs-6 text-right">
+				<!-- <span class="status in-progress">In Progress</span> -->
+				<!-- <span class="status waiting">Ready</span> -->
+				<span class="status confirm">Picked Up</span>
 			</div>
 		</div>
 	</section>
 	<!-- ORDER WINDOW -->
-
-	<!-- CONTENT SECTION -->
-	<section class="container" id="metrics">
-		<div class="row">
-			<div class="col-md-6">
-				HALF
-			</div>
-			<div class="col-md-6">
-				
-			</div>
-		</div>
-	</section>
-	<!-- END CONTENT SECTION -->
-
 
 	<!-- Footer SECTION -->
 	<footer class="container" id="footer">
