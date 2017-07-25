@@ -7,3 +7,4 @@ Up-Next is an application that allows users to bypass the long ordering lines th
 * Passport
 * Google Maps
 * Express
+* Paypal
