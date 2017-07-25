@@ -18,6 +18,13 @@ var browserHistory = router.browserHistory;
 
 // Reference the high-level components
 var Main = require("../components/Main");
+var TruckList = require ("../components/children/TruckList");
+var Customer = require ("../components/children/Customer");
+var Register = require ("../components/children/Register");
+var QRCode = require ("../components/children/QRCode");
+var Orders = require ("../components/children/Orders");
+var Menu = require ("../components/children/Menu");
+var Login = require ("../components/children/Login");
 
 
 // Export the Routes
@@ -26,12 +33,17 @@ module.exports = (
     <Router history={browserHistory}>
     <Route path="/" component={Main}>
 
-    {/* If user selects x or y show the appropriate component */}
-    <Route path="x" component={x} />
-    <Route path="y" component={y} />
-
+    <Route path="TruckList" component={TruckList}>
+    <Route path="Customer" component={Customer} />
+    <Route path="Register" component={Register} />
+    <Route path="QRCode" component={QRCode} />
+    <Route path="Orders" component={Orders} />
+    <Route path="Menu" component={Menu} />
+    <Route path="Login" component={Login} />
+    </Route>
+  
     {/* If user selects any other path... we get the Home Route */}
-    <IndexRoute component={x} />
+    <IndexRoute component={Main} />
 
     </Route>
     </Router>
