@@ -3,8 +3,11 @@ body{
 }
 footer{
 	background: #f1f1f1;
-	padding:40px 0;
+	padding-top:40px;
+	padding-bottom:300px;
 	margin:40px;
+	text-align:center;
+	font-weight: bold;
 }
 .navbar{
 	border-bottom: 3px solid #ff6400;
@@ -45,6 +48,12 @@ footer{
 #qr-code{
 	background: #ff6400;
 	min-height: 300px;
+	color:#fff;
+}
+#qr-code p{
+	padding:120px 0px;
+	font-size:1.2em;
+	font-weight:bold;
 }
 #desktop-content{
 	min-height: 300px;
@@ -66,23 +75,73 @@ footer{
 	border:2px solid #000000;
 	margin:7px 5px;
 	min-width: 250px;
+	text-transform: uppercase;
 }
 .btn:after{
 	content:'\f054';
 	padding-left: 5px;
 	font-family: fontawesome;
 	font-weight: normal;
-
 }
 .btn-primary{
-	
+	background:#ff6400;
+	border-color:#973b00;
+}
+.btn-primary:hover{
+	background: #fff;
+	color:#ff6400;
 }
 .btn-primary:hover{
 	background:transparent:
+}
+.btn-default:hover{
+	background:transparent:
+}
+.btn-info:active{
+	background:transparent;
+	background:orange;
+}
+.btn-default:active{
+	background:transparent:
+}
+.btn-info{
+	border:0px;
+	background: transparent;
+	color:#00b0f0;
+}
+.btn-info:hover{
+	color:#ff6400;
+	background:transparent;
 }
 .btn-secondary{
 
 }
 .btn-info{
 
+}
+.menu-desc{
+	text-align: center;
+	font-size: 1.2em;
+	font-style: italic;
+	padding-top: 10px;
+	line-height: 1;
+	font-family: Georgia;
+}
+.menu-img{
+	text-align: center;
+}
+.menu-img img{
+	border-top:4px solid #ff6400;
+	text-align: center;
+}
+.total{
+	font-weight: bold;
+	color:#ff6400;
+}
+#confirm-order h4{
+	line-height: 2em;
+	color:#ff6400;
+}
+#confirm-order img{
+	display: inline-block;
 }
