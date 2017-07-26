@@ -27,6 +27,9 @@ footer{
 	height: 40px;
 	margin-top:10px;
 }
+.truck-details{
+	text-align: center;
+}
 .status{
 	display: block;
 	font-weight: bold;
@@ -153,4 +156,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed6b2f', end
 	margin:20px 0;
 	padding-bottom:10px;
 	border-bottom:1px solid #ccc;
+}
+.img-circle{
+	border:1px;
+	border-color:#ff6400;
 }
