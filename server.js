@@ -3,15 +3,21 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
-var Customers = require("./models/customers.js");
-var Menus = require("./models/menus.js");
-var Orders = require("./models/orders.js");
-var Trucks = require("./models/trucks.js");
+const dbConfig = require("./config/db");
 
-var PORT = 5000;
+const Customers = require("./models/customers.js");
+const Menus = require("./models/menus.js");
+const Orders = require("./models/orders.js");
+const Trucks = require("./models/trucks.js");
+
+const PORT = process.env.PORT || 5000;
+// app.use(express.static(__dirname));
+// app.get("./")
+
 var app = express();
 
-mongoose.connect("mongodb://localhost/upnext");
+mongoose.connect(dbConfig.STRING);
+
 var db = mongoose.connection;
 
 db.on("error", function(err) {

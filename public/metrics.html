@@ -2,8 +2,10 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>
-        SAMPLE SCREEN
+        Metrics
     </title>
     
     <!-- Files from index.html -->
@@ -36,28 +38,37 @@
     <nav class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand text-center" href="###">
+                </button> -->
+                <a class="navbar-brand text-center" href="home.html">
                 </a>
             </div>
             <!-- nav bar links.  Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <!-- <ul class="nav navbar-nav">
                     <li><a href="####">LINK ONE</a></li>
                     <li><a href="###">LINK TWO</a></li>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </nav>
     <!-- CONTENT SECTION -->
     <section class="container" id="qr-reader">
         <div class="row" align="center">
-            <h2>Food Truck Name</h2>
+        <div>
+          <a onclick="goBack()" class="btn btn-info">Go Back</a>
+
+          <script>
+          function goBack() {
+              window.history.back();
+          }
+          </script>
+        </div>
+            <h2>Tony's Fry Truck</h2>
             <h3>Popular Menu Items</h3>
         </div>
         <div class="row">
@@ -68,11 +79,11 @@
             </div>
         </div>
         <br>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-12" align="center">
                 <h4>Today | Weekly | Monthly | All</h4>
             </div>
-        </div>
+        </div> -->
     </section>
     <!-- END CONTENT SECTION -->
     <!-- CONTENT SECTION -->
@@ -89,17 +100,17 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Phat thai kung</td>
+                                <td>Pork Belly Bao</td>
                                 <td>3</td>
                                 <td>$78.00</td>
                             </tr>
                             <tr>
-                                <td>Thai curry</td>
+                                <td>Fried Chicken Bao</td>
                                 <td>6</td>
                                 <td>$156.00</td>
                             </tr>
                             <tr>
-                                <td>Kaeng kanun</td>
+                                <td>Kimchi Fries</td>
                                 <td>2</td>
                                 <td>$48.00</td>
                             </tr>
@@ -107,6 +118,9 @@
                     </table>
                 </div>
             </div>
+
+            <a onclick="goBack()" class="btn btn-info">Go Back</a>
+            
     </section>
     <!-- END CONTENT SECTION -->
     <!-- Footer SECTION -->
@@ -130,23 +144,14 @@
           "theme": "carbon"
         },
         "data": [{
-          "label": "2017",
-          "value": "920000"
+          "label": "2015",
+          "value": "50000"
         }, {
           "label": "2016",
-          "value": "730000"
+          "value": "60000"
         }, {
-          "label": "2015",
-          "value": "680000"
-        }, {
-          "label": "2014",
-          "value": "670000"
-        }, {
-          "label": "2013",
-          "value": "639000"
-        }, {
-          "label": "2012",
-          "value": "590000"
+          "label": "2017",
+          "value": "38000"
         }]
       };
       var yearChartConfigs = {
@@ -166,40 +171,25 @@
         },
         data: [{
           "label": "Jan",
-          "value": "657000"
+          "value": "700"
         }, {
           "label": "Feb",
-          "value": "138000"
+          "value": "800"
         }, {
           "label": "Mar",
-          "value": "192000"
+          "value": "9200"
         }, {
           "label": "Apr",
-          "value": "111000"
+          "value": "9000"
         }, {
           "label": "May",
-          "value": "438000"
+          "value": "10000"
         }, {
           "label": "Jun",
-          "value": "292000"
+          "value": "9000"
         }, {
           "label": "Jul",
-          "value": "365000"
-        }, {
-          "label": "Aug",
-          "value": "649000"
-        }, {
-          "label": "Sep",
-          "value": "746000"
-        }, {
-          "label": "Oct",
-          "value": "803000"
-        }, {
-          "label": "Nov",
-          "value": "876000"
-        }, {
-          "label": "Dec",
-          "value": "730000"
+          "value": "12000"
         }]
       };
       var monthlyChartConfigs = {
@@ -216,20 +206,17 @@
           "theme": "carbon"
         },
         data: [{
-          "label": "Menu Item 1",
+          "label": "Pork Belly Bao",
           "value": "1460000"
         }, {
-          "label": "Menu Item 2",
+          "label": "Fried Chicken Bao",
           "value": "2190000"
         }, {
-          "label": "Menu Item 3",
+          "label": "Kimchi Fries",
           "value": "1095000"
         }, {
-          "label": "Menu Item 4",
+          "label": "Carnitas Bao",
           "value": "1095000"
-        }, {
-          "label": "Menu Item 5",
-          "value": "1460000"
         }]
       };
       var productChartConfigs = {
@@ -249,10 +236,10 @@
             </div>
           </div>
           <div className="chart-row">
-            <div id="monthly-revenue" className="inline-chart">
+            <div id="monthly-revenue" className="inline-chart col-xs-12 col-md-5">
               <react_fc.FusionCharts {...monthlyChartConfigs} />
             </div>
-            <div id="product-revenue" className="inline-chart">
+            <div id="product-revenue" className="inline-chart col-xs-12 col-md-5">
               <react_fc.FusionCharts {...productChartConfigs} />
             </div>
           </div>
@@ -266,6 +253,8 @@
   );
 </script>
     <!-- Footer SECTION -->
+
+
 </body>
 
 </html>
